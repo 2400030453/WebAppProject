@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Simple WebApp - Home</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main class="center">
+		<h1>Simple WebApp</h1>
+		<p>Select a role to continue:</p>
+		<div class="form-row">
+			<select id="roleSelect">
+				<option value="admin">Admin</option>
+				<option value="manager">Manager</option>
+				<option value="user">User</option>
+			</select>
+			<button id="goBtn">Go</button>
+		</div>
+		<nav class="links">
+			<a href="admin.html">Admin page</a>
+			<a href="manager.html">Manager page</a>
+			<a href="user.html">User page</a>
+		</nav>
+	</main>
+
+	<script>
+		document.getElementById('goBtn').addEventListener('click', function () {
+			const role = document.getElementById('roleSelect').value;
+			if (role === 'admin') location.href = 'admin.html';
+			else if (role === 'manager') location.href = 'manager.html';
+			else location.href = 'user.html';
+		});
+	</script>
+</body>
+</html>
